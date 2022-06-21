@@ -18,15 +18,15 @@ app.use(express.urlencoded({ extended: true }));   /* bodyParser.urlencoded() is
 
 const db = require("./app/models");
 
-//db.sequelize.sync();
+db.sequelize.sync();
 // // drop the table if it already exists
-db.sequelize.sync({ force: true }).then(() => {
- console.log("Drop and re-sync db.");
-});
+//db.sequelize.sync({ force: true }).then(() => {
+ //console.log("Drop and re-sync db.");
+//});
 
 // simple route
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome to bezkoder application." });
+  res.json({ message: "Welcome to NIK application." });
 });
 
 require("./app/routes/turorial.routes")(app);
